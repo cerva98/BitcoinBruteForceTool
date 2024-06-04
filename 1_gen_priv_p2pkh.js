@@ -42,8 +42,8 @@ const processarESalvarLote = (loteChavesPrivadas, loteEnderecosPublicos, loteNum
     });
 };
 
-const numCarteiras = 1000;  // Número total de carteiras a serem geradas
-const tamanhoLote = 10;  // Tamanho de cada lote de geração de carteiras
+const numCarteiras = 1000000;  // Número total de carteiras a serem geradas
+const tamanhoLote = 10000;  // Tamanho de cada lote de geração de carteiras
 
 criarPastasSeNaoExistirem();  // Chama a função para criar pastas se não existirem
 
