@@ -11,7 +11,7 @@ def main():
 
     while True:
         total_loops += 1
-        total_keys_checked = total_loops * 1000000
+        total_keys_checked = total_loops * 10000000
         print(colored(f"Chaves verificadas: {total_keys_checked}", "green"))
 
         for index, script in enumerate(scripts):
@@ -19,9 +19,9 @@ def main():
 
             # Execute o script Python ou JavaScript conforme necessário
             if script.endswith('.js'):
-                process = subprocess.Popen(["node", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8')
+                process = subprocess.Popen(["node", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             else:
-                process = subprocess.Popen(["python", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8') # Caso esteja em distro linux, altere para python3
+                process = subprocess.Popen(["python", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
 
             # Exiba a saída enquanto o script está em execução
             for line in process.stdout:
