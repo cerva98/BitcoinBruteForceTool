@@ -1,4 +1,3 @@
-# Esse script gera um loop entre a geração de chaves privadas, conversão para chaves públicas e verificação de saldos
 import subprocess
 from termcolor import colored 
 
@@ -20,9 +19,9 @@ def main():
 
             # Execute o script Python ou JavaScript conforme necessário
             if script.endswith('.js'):
-                process = subprocess.Popen(["node", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                process = subprocess.Popen(["node", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8')
             else:
-                process = subprocess.Popen(["python", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True) # Caso esteja em distro linux, altere para python3
+                process = subprocess.Popen(["python", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8') # Caso esteja em distro linux, altere para python3
 
             # Exiba a saída enquanto o script está em execução
             for line in process.stdout:
@@ -44,8 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # Caso o loop seja interrompido, quer dizer que encontrou saldo. Se isso acontecer, basta verificar em qual arquivo a chave pública se encontra
-    # Por exemplo, foi encontrado saldo, salvo no balance.txt, dentro da carteira 1xxx, que se encontra no arquivo pub_keys_compressed_50, portanto, a sua chave privada estará no arquivo e linhas correspondentes.
-    # Para importar a carteira, basta inserir a chave privada em hexadecimal no script da conv_key_to_WIF.py
-    # Todo script funciona Offline, a exceto o download das carteiras com saldo atualizada.
