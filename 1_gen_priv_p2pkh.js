@@ -34,7 +34,7 @@ const processarESalvarLote = (loteChavesPrivadas, loteEnderecosPublicos, loteNum
                 if (err) {
                     reject(`Erro ao salvar endereços públicos do lote ${loteNumero}: ${err}`);
                 } else {
-                    console.log(`Endereços públicos gerados do lote ${loteNumero} salvos.`);
+                    console.log(`P2PKH gerados do lote ${loteNumero} salvos.`);
                     resolve();
                 }
             });
@@ -42,8 +42,8 @@ const processarESalvarLote = (loteChavesPrivadas, loteEnderecosPublicos, loteNum
     });
 };
 
-const numCarteiras = 1000000;  // Número total de carteiras a serem geradas
-const tamanhoLote = 10000;  // Tamanho de cada lote de geração de carteiras
+const numCarteiras = 1000;  // Número total de carteiras a serem geradas
+const tamanhoLote = 10;  // Tamanho de cada lote de geração de carteiras
 
 criarPastasSeNaoExistirem();  // Chama a função para criar pastas se não existirem
 
@@ -104,7 +104,7 @@ if (process.send) {  // Verifica se o script está sendo executado como um proce
     gerarLotes().then(() => {  // Chama a função para gerar lotes de carteiras
         const endTime = process.hrtime(startTime);  // Marca o fim da execução do script
         const tempoExecucao = (endTime[0] + endTime[1] / 1e9).toFixed(2);  // Calcula o tempo de execução
-        console.log(`Tempo total de execução: ${tempoExecucao} segundos`);  // Exibe o tempo total de execução
+        console.log(`Tempo decorrido: ${tempoExecucao} segundos`);  // Exibe o tempo total de execução
         process.exit(); // Encerra a execução do processo pai
     }).catch((error) => {
         console.error(error);  // Exibe erros na geração dos lotes de carteiras
