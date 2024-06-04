@@ -55,7 +55,7 @@ def progresso_download(tamanho_atual):
 print("Baixando arquivo full_p2pkh.tsv.gz...")
 baixar_arquivo("http://addresses.loyce.club/Bitcoin_addresses_LATEST.txt.gz", "full_p2pkh.tsv.gz")
 
-print("Extraindo arquivo full_1.tsv...")
+print("Extraindo arquivo full_p2pkh.tsv...")
 extrair_arquivo_gz("full_p2pkh.tsv.gz", "full_p2pkh.tsv")
 
 print("O arquivo foi baixado e copiado com sucesso!")
