@@ -5,6 +5,8 @@ Essa ferramenta destina-se para fins acadêmicos. Ela utiliza processamento por 
 
 Esta ferramenta é uma solução abrangente para a realização de ataques de força bruta no Bitcoin. Ela realiza a geração aleatória em massa de chaves privadas hexadecimais do Bitcoin, utilizando a criptografia de curvas elípticas SECP256K1.
 Após gerar, a chave é convertida para endereço público no formato P2PKH e é feita uma comparação em massa, extremamente veloz, cerca de alguns milhões por segundo, comparando com a base de dados de milhões de carteiras com saldo, objetivando a colisão de alguma carteira.
+Todo processo funciona offline após o download da lista de endereços com saldo.
+O processo de geração e derivação utiliza multiprocessamento de CPU.
 
 ## Funcionalidades
 
@@ -33,3 +35,4 @@ Após gerar, a chave é convertida para endereço público no formato P2PKH e é
 ├── 2_check_balance.py     # Script para comparação de endereços utilizando
 ├── y_download.py          # Script para baixar a lista mais recente de carteiras com saldo positivo
 ├── z_manter_p2pkh.py      # Script para manter na lista apenas as carteiras no formato p2pkh
+├── conv_priv_key_to_WIF_com.py # Script para converter a chave privada para formato de importação de carteiras, WIF.
