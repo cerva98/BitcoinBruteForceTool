@@ -11,7 +11,7 @@ def main():
 
     while True:
         total_loops += 1
-        total_keys_checked = total_loops * 10000000
+        total_keys_checked = total_loops * 1000000
         print(colored(f"Chaves verificadas: {total_keys_checked}", "green"))
 
         for index, script in enumerate(scripts):
