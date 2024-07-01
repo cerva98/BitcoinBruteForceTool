@@ -17,6 +17,8 @@ Após gerar, a chave é convertida para endereço público no formato P2PKH e é
 
 - Aplica processos criptográficos para derivar a chave pública correspondente.
 - Converte a chave pública para o formato P2PKH (Pay-to-PubKey-Hash), amplamente utilizado para endereços de Bitcoin.
+- A geração e derivação das chaves utiliza multiprocessamento, portanto, utilizará todas os theads dispníveis da CPU.
+- Já foram feitos testes com 20 núcleos e foi suportado pelo sistema.
 
 ### Comparação de Endereços
 
